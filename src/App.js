@@ -6,17 +6,26 @@ import Navigation from './Nav/navigation'
 import Profile from './Profile/profile';
 import Projects from './Projects/projects';
 
+
+const routes = [
+  { path: '/', element: <Home /> },
+  { path: '/profile', element: <Profile /> },
+  { path: '/projects', element: <Projects /> },
+];
+
+
 function App() {
   return (
     <>
-    <Navigation />
+    
     <div className="App">
       <header className="App-header">
         <Router>
+        <Navigation />
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/profile" element={<Profile />} />
-            <Route path='/projects' element={<Projects />} />
+            {routes.map((route, index) => (
+              <Route key={index} path={route.path} element={route.element} />
+            ))}
           </Routes>
         </Router>
       </header>

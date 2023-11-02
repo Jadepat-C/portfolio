@@ -7,6 +7,9 @@
         color: grey;
         transition: .2s ease-in-out;
     }
+    a:active {
+        color: grey;
+    }
 }
 
 .logo {
@@ -19,4 +22,17 @@
     stroke-width: 3;
     stroke: white;
     transition: .3s ease-in-out;
+}
+
+
+.toggle{
+    border: transparent !important;
+}
+
+.hamburger {
+    font-size: 1.5rem !important;
+}
+
+.active {
+    color: pink !important;
 }

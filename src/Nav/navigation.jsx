@@ -1,8 +1,8 @@
-import { Container } from 'react-bootstrap';
 import { Nav } from 'react-bootstrap';
 import { Navbar } from 'react-bootstrap';
-import styles from './Navigation.module.scss'
-import {ReactComponent as Logo} from '../Drawable/my-logo.svg'
+import { NavLink } from 'react-router-dom';
+import styles from './Navigation.module.scss';
+import {ReactComponent as Logo} from '../Drawable/my-logo.svg';
 
 function Navigation(){
     return (
@@ -17,21 +17,32 @@ function Navigation(){
 
 export default Navigation;
 
-const navbar =  <Navbar collapseOnSelect>
-  <div className='container-fluid mx-5'>
-  <Navbar.Brand href="/">
-    <Logo className={styles.logo}/>
-    </Navbar.Brand>
-  <Navbar.Toggle />
-  <Navbar.Collapse id="basic-navbar-nav">
-      
-  </Navbar.Collapse>
-  <Nav className={`${styles.nav}`}>
-      <Nav.Link href="/" >Home</Nav.Link>
-      <Nav.Link href="/profile">Profile</Nav.Link>
-      <Nav.Link href='/projects'>Projects</Nav.Link>
-    </Nav>  
-  </div>
-  
+const routes = [
+  { path: '/', text: 'Home' },
+  { path: '/profile', text: 'Profile' },
+  { path: '/projects', text: 'Projects' },
+];
+const navbar = (
+  <Navbar collapseOnSelect expand="md">
+    <div className="container-fluid">
+      <Navbar.Brand as={NavLink} to="/">
+        <Logo className={styles.logo} />
+      </Navbar.Brand>
+      <Navbar.Toggle aria-controls='responsive-navbar-nav' className={styles.toggle}>
+        <span className={`${styles.hamburger} fa fa-bars`}></span>
+      </Navbar.Toggle>
+      <Navbar.Collapse id="responsive-navbar-nav">
+        <div className='me-auto'></div>
+        <Nav className={`${styles.nav}`}>
+          {routes.map((route, index) => (
+            <NavLink key={index} to={route.path} className={`${(isActive) => (isActive ? 'bg-green-500 font-bold': '')} mx-3`}>
+              <span className='d-none'> {'> '}</span>
+              {route.text}
+            </NavLink>
+          ))}
+        </Nav>        
+      </Navbar.Collapse>
+    </div>
+  </Navbar>
+);
 
-</Navbar>

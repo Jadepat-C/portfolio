@@ -92,6 +92,7 @@ const info = (
         <MediaQuery maxWidth={mediaQueryValue}>
         <div className=''>
             {linkUrl.map((link, index) => (
+                // eslint-disable-next-line jsx-a11y/anchor-has-content
                 <a key={index} href={link.url} target='_blank' rel='noopener noreferrer' className={`fa fa-${link.name.toLowerCase()} me-4`} />
             ))}
         </div>
@@ -99,6 +100,7 @@ const info = (
         <MediaQuery minWidth={mediaQueryValue}>
             <div className='ms-5'>
                 {linkUrl.map((link, index) => (
+                    // eslint-disable-next-line jsx-a11y/anchor-has-content
                     <a key={index} href={link.url} target='_blank' rel='noopener noreferrer' className={`fa fa-${link.name.toLowerCase()} me-4`} />
                 ))}
             </div>
@@ -114,7 +116,7 @@ const skills = (
                 {skillData.map((item, index) => (
                     <div className='card col m-3' key={index}>
                         <div className='card-body'>
-                            <h5 className={`card-title ${styles.skill_title}`}>{item.title}</h5>
+                            <h5 className={`card-title`}>{item.title}</h5>
                             <p className='card-text'>
                                 <ul>
                                     {item.description.map((description, descriptionIndex) => (

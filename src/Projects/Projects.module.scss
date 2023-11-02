@@ -8,6 +8,7 @@ $border-right: .5em white solid;
     font-size: medium !important;
 }
 
+
 .typewriter {
     overflow: hidden;
     width: 0;
@@ -57,6 +58,9 @@ table tbody tr:hover {
     background-color: rgba(255, 255, 255, 0.1) !important;
     color: white !important;
     transition: .05s ease-in-out;
+    i {
+        background-color: inherit
+    }
 }
 
 .tag:hover {

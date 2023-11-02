@@ -1,5 +1,5 @@
 $border-right: .5em white solid;
-div, li, small .skill_title {
+div, li, small {
     color: white !important;
 }
 
@@ -15,7 +15,7 @@ div, li, small .skill_title {
 
 .active_scrollspy {
     background-color: none;
-    font-weight: bolder;
+    font-weight: bold;
     span {
         margin-right: .5em;
         transition: 0.1s ease-in-out;

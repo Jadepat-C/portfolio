@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
-import styles from './Projects.module.scss'
-import projectData from '../Data/Projects.json'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { React } from 'react';
+import MediaQuery from 'react-responsive';
+import styles from './Projects.module.scss';
+import projectData from '../Data/Projects.json';
+
 
 const mediaQueryValue = 768;
 
@@ -26,7 +28,12 @@ function Projects(){
                 <div className='d-inline-block'>
                     <h1 className={`${styles.monospace} ${styles.typewriter}`}>Projects</h1>
                 </div>
-                {projectTable}
+                <MediaQuery minWidth={mediaQueryValue} className='table-responsive-md'>
+                    {projectTable}
+                </MediaQuery>
+                <MediaQuery maxWidth={mediaQueryValue}>
+                    {projectMobile}
+                </MediaQuery>
             </div>
         </div>
         </>
@@ -35,19 +42,20 @@ function Projects(){
 
 export default Projects
 
+
 function extractDomain(url) {
+    var hostname;
     try {
-        const hostname = new URL(url).hostname;
-        return hostname;
+        hostname = new URL(url).hostname;
     } catch (error) {
-        // Handle invalid URL
-        console.error(`Invalid URL: ${url}`);
-        return url; // Or you can return a default value or an error message
+        hostname = null;
     }
+    
+    return hostname;
 }
 
 const projectTable = (
-    <div className='table-responsive-md'>
+
         <table className='table table-hover'>
             <thead>
                 <tr>
@@ -78,10 +86,30 @@ const projectTable = (
                                 <i className={`${styles.fa} fa fa-external-link ms-2`}></i>
                             </a>
                         </td>
-                        <td className='pe-2'><i className={`${styles.fa} fa fa-chevron-down`}></i></td>
+                        {/* <td className='pe-2'><i className={`${styles.fa} fa fa-chevron-down`}></i></td> */}
                     </tr>
                 ))}
             </tbody>
         </table>
+
+);
+
+const projectMobile = (
+    <div>
+        {projectData.map((item,index) => (
+            <div className='card m-2'>
+                <a href={item.link} target='_blank' rel='noopener noreferrer'>
+                    <div className='card-body' key={index}>
+                    <div className='d-flex justify-content-between'><h5 className='card-title'>{item.title}</h5> <i className={`${styles.fa} fa fa-external-link ms-2`}></i></div> 
+                    <p className='card-text'>{item.type}, {item.year}</p>
+                    {item.tag.map((tagItem,tagIndex) => (
+                            <div key={tagIndex} className={`${styles.tag} me-2 my-2 btn btn-outline-light`}>
+                                {tagItem}
+                            </div>
+                        ))}
+                </div>
+                </a>
+            </div>
+        ))}
     </div>
 );
