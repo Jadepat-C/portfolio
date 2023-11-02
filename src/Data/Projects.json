@@ -4,7 +4,7 @@
         "year": 2023,
         "type": "Personal Project",
         "description": "Personal website using React,SCSS to create interactive webpage. Deployed in AWS.",
-        "link": "",
+        "link": "https://github.com/Jadepat-C/portfolio",
         "tag": [
             "React", "SCSS", "Bootstrap", "JSON", "AWS"
         ]
