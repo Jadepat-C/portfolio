@@ -2,6 +2,7 @@ import { Nav } from 'react-bootstrap';
 import { Navbar } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import styles from './Navigation.module.scss';
+import './navstyle.scss';
 import {ReactComponent as Logo} from '../Drawable/my-logo.svg';
 
 function Navigation(){
@@ -35,10 +36,10 @@ const navbar = (
         <div className='me-auto'></div>
         <Nav className={`${styles.nav}`}>
           {routes.map((route, index) => (
-            <NavLink key={index} to={route.path} className={`${(isActive) => (isActive ? 'bg-green-500 font-bold': '')} mx-3`}>
-              <span className='d-none'> {'> '}</span>
+              <Nav.Link key={index} as={NavLink} to={route.path} className={`mx-2`}>
+              <span> {'> '}</span>
               {route.text}
-            </NavLink>
+            </Nav.Link>
           ))}
         </Nav>        
       </Navbar.Collapse>

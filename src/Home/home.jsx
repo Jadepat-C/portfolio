@@ -60,9 +60,17 @@ const welcome = (
 
 const nextBtn = (
   <div className='d-flex justify-content-end'>
-          <Link to='/profile'>
-            <p className={`${styles.typewriter} display-6`}>Enter &rarr;</p>
-          </Link>
+    <MediaQuery minWidth={mediaQueryValue}>
+      <Link to='/profile'>
+        <p className={`${styles.typewriter} display-6`}>Enter &rarr;</p>
+      </Link>
+    </MediaQuery>
+    <MediaQuery maxWidth={mediaQueryValue}>
+      <Link to='/profile' className='mt-5'>
+        <p className={`${styles.typewriter} display-6`}>Enter &rarr;</p>
+      </Link>
+    </MediaQuery>
+          
       </div>
 );
 

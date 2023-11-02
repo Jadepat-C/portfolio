@@ -1,0 +1,7 @@
+.navbar-nav .nav-link.active, .navbar-nav .nav-link.show {
+    color: white !important;
+    font-weight: bold;
+    span {
+        display: contents
+    }
+}

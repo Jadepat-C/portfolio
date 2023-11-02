@@ -7,8 +7,11 @@
         color: grey;
         transition: .2s ease-in-out;
     }
-    a:active {
+    a.active {
         color: grey;
+    }
+    span {
+        display: none;
     }
 }
 
@@ -31,8 +34,4 @@
 
 .hamburger {
     font-size: 1.5rem !important;
-}
-
-.active {
-    color: pink !important;
 }
