@@ -1,0 +1,62 @@
+[
+    {
+        "title": "Personal Website",
+        "year": 2023,
+        "type": "Personal Project",
+        "description": "Personal website using React,SCSS to create interactive webpage. Deployed in AWS.",
+        "link": "",
+        "tag": [
+            "React", "SCSS", "Bootstrap", "JSON", "AWS"
+        ]
+    },
+    {
+        "title": "Travel Expenses Web App",
+        "year": 2023,
+        "type": "College's Assignment",
+        "description": "Web application using C# doing CRUD operation and Angular Framework creating single-page application (SPA) from imported dataset via file-IO.",
+        "link": "https://github.com/Jadepat-C/C-Sharp-Practice-TravelExpenses",
+        "tag": [
+            "C#", "Angular", "RESTful API", "typescript", "File-IO", "Bootstrap"
+        ]
+    },
+    {
+        "title": "Tab Finder Extension",
+        "year": 2023,
+        "type":"Personal Project",
+        "description": "Chrome browser extension that gives user to search thier currently opened tab and allows them to quickly switch to chosen tab.",
+        "link": "https://github.com/Jadepat-C/Tab-Finder",
+        "tag": [
+            "HTML", "Javascrpit", "CSS", "Bootstrap"
+        ]
+    },
+    {
+        "title": "Task Scheduler",
+        "year": 2023,
+        "type":"Personal Project",
+        "description": "C# console app that allows user to perform CRUD operation managing their tasks and save it to the database.",
+        "link": "https://github.com/Jadepat-C/C-Sharp_Practice_TaskScheduler",
+        "tag": [
+            "C#", "MSSQL"
+        ]
+    },
+    {
+        "title": "Peer Tutor Web Application",
+        "year": 2023,
+        "type": "College's Assignment",
+        "description": "Java web application via Servlet that allows user to input to search data from the database and output the result according to the condition.",
+        "link": "https://github.com/Jadepat-C/Java_Practice_Servlet_Web_Application",
+        "tag": [
+            "Java", "MySQL", "Servlet", "Bootstrap"
+        ]
+    },
+    {
+        "title": "Rental Board",
+        "year": 2023,
+        "type": "College's Assignment",
+        "description": "Website create by PHP that allows user to perform CRUD operation about their rental unit.",
+        "link": "https://github.com/Jadepat-C/Web_Development_Assignment2_Form-and-DB-with-PHP",
+        "tag": [
+            "PHP", "Bootstrap", "MySQL"
+        ]
+    }
+]

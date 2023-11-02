@@ -1,0 +1,106 @@
+[
+    {
+        "title": "React",
+        "description": [
+            "Building interactive user interfaces & single-page applications (SPAs) with React",
+            "React components and props",
+            "State management with React Hooks or Redux",
+            "Routing and navigation with React Router",
+            "RESTful API integration and data fetching",
+            "Unit testing with Jest and React Testing Library",
+            "Responsive design using CSS and popular libraries like Material-UI",
+            "Form handling and validation in React applications"
+        ]
+    },
+    {
+        "title": "Angular",
+        "description":[
+            "Building interactive user interfaces & single-page applications (SPAs) with Angular",
+            "Components, templates, and data binding",
+            "Angular CLI for project setup and development",
+            "Routing and navigation with Angular Router",
+            "HTTP communication and RESTful services",
+            "Responsive design with Angular Material or Bootstrap"
+        ]
+    },
+    {
+        "title": "C#",
+        "description":[
+            "Object-oriented programming",
+            "Developing Rest APIs",
+            "ASP.NET development",
+            "Creating applications using design patterns with database integration",
+            "Developing web and desktop applications",
+            "Unit testing",
+            "Concurrency and multithreading",
+            "Windows Forms for building desktop applications",
+            "Entity Framework for data access"
+        ]
+    },
+    {
+        "title": "Java",
+        "description":[
+            "Object-oriented programming",
+            "Developing Rest APIs",
+            "Creating applications using design patterns with database integration",
+            "Developing web and desktop applications",
+            "Unit testing",
+            "Concurrency and multithreading",
+            "JavaFX for building graphical user interfaces"
+        ]
+    },
+    {
+        "title": "SQL and Database",
+        "description":[
+            "Database design, normalization, and optimization",
+            "Data Definition Language (DDL) for creating and modifying database structures",
+            "Data Manipulation Language (DML) for querying and manipulating data",
+            "Data Control Language (DCL) for security and permissions management",
+            "Transaction Control Language (TCL) for managing transactions",
+            "Developing functions, triggers, and stored procedures",
+            "Database management and administration"
+        ]
+    },
+    {
+        "title": "JSON and XML",
+        "description":[
+            "Web content management using JSON and XML data formats",
+            "Parsing data from JSON and XML sources into databases",
+            "Developing web applications and APIs that utilize JSON and XML data"
+        ]
+    },
+    {
+        "title": "Linux and Window",
+        "description":[
+            "Proficient in both Linux and Windows operating systems",
+            "Experience with system administration, shell scripting, and system maintenance on Linux",
+            "Windows system management and administration"
+        ]
+    },
+    {
+        "title": "Android",
+        "description":[
+            "Application design using Java and XML for Android",
+            "Application implementation on the Android platform",
+            "Unit testing and quality assurance for Android applications"
+        ]
+    },
+    {
+        "title": "Networking",
+        "description":[
+            "Proficient in networking protocols and standards",
+            "In-depth knowledge of TCP/IP, HTTP, OSI model, and subnetting",
+            "Experience with ethernet switching and network infrastructure"
+        ]
+    },
+    {
+        "title": "Project Management",
+        "description":[
+            "Skilled in Agile methodologies and DevOps practices",
+            "Proficient in creating user stories and defining project requirements",
+            "Experience in work breakdown structure (WBS) development",
+            "Competent in maintaining RAID (Risks, Assumptions, Issues, and Dependencies) logs",
+            "Creating and executing test cases for project quality assurance"
+        ]
+    }
+]

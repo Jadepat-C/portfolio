@@ -1,0 +1,64 @@
+$black: #333333;
+$border-right: .5em white solid;
+.monospace {
+    font-family: monospace;
+}
+
+.fa {
+    font-size: medium !important;
+}
+
+.typewriter {
+    overflow: hidden;
+    width: 0;
+    white-space: nowrap;
+    font-family: monospace;
+    border-right: $border-right; /* The typewriter cursor */
+    animation: typing .8s steps(15) forwards, blink 2s step-end infinite;
+}
+@keyframes typing {
+    from {width: 0;}
+    1% {opacity: 100;}
+    to {width: 100%; opacity: 100;}
+}
+
+/* The typewriter cursor effect */
+@keyframes blink {
+    from, to, 50% { border-color: transparent }
+    25%, 75% { border-color: white; }
+}
+
+table{
+    thead{
+        border-bottom-width: .1em !important;
+    }
+    tr {
+        margin: 50px;
+        border: rgba(255, 255, 255, 0.15);
+    }
+    
+}
+table thead tr td,
+table tbody tr td {
+    background-color: transparent !important;
+    color: white !important;
+}
+
+tbody tr td {
+    padding: 1rem 0rem !important; 
+    vertical-align: middle !important;
+}
+
+thead {
+    font-size: larger;
+}
+
+table tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    color: white !important;
+    transition: .05s ease-in-out;
+}
+
+.tag:hover {
+    color: black !important;
+}

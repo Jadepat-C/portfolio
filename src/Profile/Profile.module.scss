@@ -1,0 +1,63 @@
+$border-right: .5em white solid;
+div, li, small .skill_title {
+    color: white !important;
+}
+
+.sidebar {
+    height: 100%;
+    position: sticky;
+    top: 10%;
+}
+
+.start_25 {
+    left: 25%
+}
+
+.active_scrollspy {
+    background-color: none;
+    font-weight: bolder;
+    span {
+        margin-right: .5em;
+        transition: 0.1s ease-in-out;
+    }
+}
+
+.typewriter {
+    overflow: hidden;
+    width: 0;
+    white-space: nowrap;
+    font-family: monospace;
+    border-right: $border-right; /* The typewriter cursor */
+    animation: typing .8s steps(15) forwards, blink 2s step-end infinite;
+}
+
+@keyframes typing {
+    from {width: 0;}
+    1% {opacity: 100;}
+    to {width: 100%; opacity: 100;}
+}
+
+/* The typewriter cursor effect */
+@keyframes blink {
+    from, to, 50% { border-color: transparent }
+    25%, 75% { border-color: white; }
+}
+
+.scrollspy{
+    li {
+        list-style-type: none;
+    }
+    .scroll_list{
+        color: white;
+        font-family: monospace;
+        font-size: larger;
+    }
+    .scroll_list:hover{
+        color: grey;
+    }
+}
+
+.monospace {
+    font-family: monospace;
+    max-width: min-content;
+}

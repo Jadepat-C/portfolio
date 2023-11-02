@@ -1,0 +1,22 @@
+.nav {
+    a{
+        color: white;
+        font-family: monospace;
+    }
+    a:hover {
+        color: grey;
+        transition: .2s ease-in-out;
+    }
+}
+
+.logo {
+    color: white;
+    width: 80px;
+}
+
+.logo:hover {
+    color: white;
+    stroke-width: 3;
+    stroke: white;
+    transition: .3s ease-in-out;
+}
