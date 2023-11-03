@@ -10,7 +10,7 @@ $border-right: .5em white solid;
         animation: typing .5s steps(10) forwards, blink .5s step-end forwards;
     }
     
-    h2,h5 {
+    h2,h6 {
         border-right: $border-right; /* The typewriter cursor */
         opacity: 0;
         animation: typing 1s steps(30) forwards, blink 1s step-end forwards;
@@ -53,4 +53,6 @@ div {
     color: #b4ba7d;
 }
 
-
+.text_small {
+    font-size:large;
+}

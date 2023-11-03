@@ -31,7 +31,7 @@ function Home(){
     return (
         <>
           <div className={`${styles}`}>
-          <div className={`${styles.typewriter} container-fluid w-75 mt-5`}>
+          <div className={`${styles.typewriter} container w-75 mt-5`}>
               {welcome}
               {nextBtn}
             </div>
@@ -51,8 +51,8 @@ const welcome = (
             <h2 className={`${styles.typewriter} display-5`}>{'>'}I'm <span className={styles.name}>Jadepat Chernsonthi</span></h2>
           </MediaQuery>
           <MediaQuery maxWidth={mediaQueryValue}>
-            <h1 className={`${styles.typewriter} display-3`}>{'>'}Hello World!</h1>
-            <h5 className={`${styles.typewriter}`}>{'>'}I'm <span className={styles.name}>Jadepat Chernsonthi</span></h5>
+            <h1 className={`${styles.typewriter} display-4`}>{'>'}Hello World!</h1>
+            <h6 className={`${styles.typewriter}`}>{'>'}I'm <span className={styles.name}>Jadepat Chernsonthi</span></h6>
           </MediaQuery>
         </div>
     </div>
