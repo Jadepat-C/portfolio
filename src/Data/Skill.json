@@ -20,7 +20,14 @@
             "Angular CLI for project setup and development",
             "Routing and navigation with Angular Router",
             "HTTP communication and RESTful services",
-            "Responsive design with Angular Material or Bootstrap"
+            "Responsive design with Angular Material or Bootstrap/Tailwind"
+        ]
+    },
+    {
+        "title": "Electron",
+        "description":[
+            "Building cross-platform desktop applications using Electron",
+            "Integration with web technologies (HTML, CSS, JavaScript)"
         ]
     },
     {
