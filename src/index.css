@@ -96,7 +96,7 @@
   }
 }
 
-/* Font Awesome icons (loaded in index.html) */
+/* Font Awesome icons (bundled from the font-awesome package in main.jsx) */
 .fa {
   font-size: 2rem !important;
   text-decoration: none;
