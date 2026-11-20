@@ -1,0 +1,59 @@
+/*
+ * Tailwind CSS entry point.
+ *
+ * Bootstrap is still loaded while the components are moved over one by one,
+ * so Tailwind's base reset ("Preflight") is left out for now and only the
+ * theme and utility classes are loaded.
+ */
+@import 'tailwindcss/theme.css' layer(theme);
+@import 'tailwindcss/utilities.css' layer(utilities);
+
+/*
+ * Use Bootstrap's breakpoints so the layout switches at the same widths as
+ * before. Only md (768px) is the same in both.
+ */
+@theme {
+  --breakpoint-sm: 36rem; /* 576px */
+  --breakpoint-md: 48rem; /* 768px */
+  --breakpoint-lg: 62rem; /* 992px */
+  --breakpoint-xl: 75rem; /* 1200px */
+  --breakpoint-2xl: 87.5rem; /* 1400px */
+}
+
+/* Centered page column, same widths as Bootstrap's .container */
+@utility page-container {
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: 0.75rem;
+  @media (width >= 36rem) { max-width: 540px; }
+  @media (width >= 48rem) { max-width: 720px; }
+  @media (width >= 62rem) { max-width: 960px; }
+  @media (width >= 75rem) { max-width: 1140px; }
+  @media (width >= 87.5rem) { max-width: 1320px; }
+}
+
+/* Large light headings, same sizes as Bootstrap's .display-1 … .display-6 */
+@utility display-1 {
+  font-size: calc(1.625rem + 4.5vw);
+  font-weight: 300;
+  line-height: 1.2;
+  @media (width >= 75rem) { font-size: 5rem; }
+}
+@utility display-4 {
+  font-size: calc(1.475rem + 2.7vw);
+  font-weight: 300;
+  line-height: 1.2;
+  @media (width >= 75rem) { font-size: 3.5rem; }
+}
+@utility display-5 {
+  font-size: calc(1.425rem + 2.1vw);
+  font-weight: 300;
+  line-height: 1.2;
+  @media (width >= 75rem) { font-size: 3rem; }
+}
+@utility display-6 {
+  font-size: calc(1.375rem + 1.5vw);
+  font-weight: 300;
+  line-height: 1.2;
+  @media (width >= 75rem) { font-size: 2.5rem; }
+}
