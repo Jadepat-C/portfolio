@@ -36,7 +36,7 @@ const welcome = (
   <div>
     <div className="inline-block">
       <h1 className={`${styles.typewriter} display-4 md:display-1`}>{'>'}Hello World!</h1>
-      <h2 className={`${styles.typewriter} text-base font-medium md:display-5`}>
+      <h2 className={`${styles.typewriter} text-base leading-[1.2] font-medium md:display-5`}>
         {'>'}I'm <span className={styles.name}>Jadepat Chernsonthi</span>
       </h2>
     </div>
