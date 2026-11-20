@@ -3,12 +3,12 @@ import { Navbar } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import styles from './Navigation.module.scss';
 import './navstyle.scss';
-import {ReactComponent as Logo} from '../Drawable/my-logo.svg';
+import Logo from '../Drawable/my-logo.svg?react';
 
 function Navigation(){
     return (
         <>
-            <div className={`${styles} sticky-top h-100`}>
+            <div className="sticky-top h-100">
               {navbar}
             </div>
           

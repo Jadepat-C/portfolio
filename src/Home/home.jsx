@@ -30,7 +30,7 @@ function Home(){
     }, [handleEnterPress]);
     return (
         <>
-          <div className={`${styles}`}>
+          <div>
           <div className={`${styles.typewriter} container w-75 mt-5`}>
               {welcome}
               {nextBtn}

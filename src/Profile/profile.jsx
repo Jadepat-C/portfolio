@@ -1,35 +1,18 @@
-import './profile';
 import styles from './Profile.module.scss';
 import educationData from '../Data/Education.json';
 import experienceData from '../Data/Experience.json';
 import linkUrl from '../Data/Link.json'
 import skillData from '../Data/Skill.json'
 import MediaQuery from 'react-responsive';
-import { useState, useEffect } from 'react';
-import ScrollSpy from 'react-scrollspy';
+import ScrollSpyModule from 'react-scrollspy';
+
+// react-scrollspy is an old CommonJS package. Vite's production build hands us
+// the whole module object, so unwrap `.default` when it is there.
+const ScrollSpy = ScrollSpyModule.default ?? ScrollSpyModule;
 
 const mediaQueryValue = 768;
 
-function useDataFromJSON(url) {
-    const [data, setData] = useState([]);
-
-    useEffect(() => {
-        fetch(url)
-        .then((response) => response.json())
-        .then((retrievedData) => setData(retrievedData));
-    }, [url]); 
-    return data;
-}
-
 function Profile(){
-    const [educationData, setEducationData] = useState([]);
-    const [experienceData, setExperienceData] = useState([]);
-    const [skillData, setSkillData] = useState([]);
-
-    // Fetch and set data for education and experience separately
-    useDataFromJSON(educationData, setEducationData);
-    useDataFromJSON(experienceData, setExperienceData);
-    useDataFromJSON(skillData, setSkillData);
     return (
         <>
             <div className={styles.profile}>
@@ -92,16 +75,14 @@ const info = (
         <MediaQuery maxWidth={mediaQueryValue}>
         <div className=''>
             {linkUrl.map((link, index) => (
-                // eslint-disable-next-line jsx-a11y/anchor-has-content
-                <a key={index} href={link.url} target='_blank' rel='noopener noreferrer' className={`fa fa-${link.name.toLowerCase()} me-4`} />
+                <a key={index} href={link.url} aria-label={link.name} target='_blank' rel='noopener noreferrer' className={`fa fa-${link.name.toLowerCase()} me-4`} />
             ))}
         </div>
         </MediaQuery>
         <MediaQuery minWidth={mediaQueryValue}>
             <div className='ms-5'>
                 {linkUrl.map((link, index) => (
-                    // eslint-disable-next-line jsx-a11y/anchor-has-content
-                    <a key={index} href={link.url} target='_blank' rel='noopener noreferrer' className={`fa fa-${link.name.toLowerCase()} me-4`} />
+                        <a key={index} href={link.url} aria-label={link.name} target='_blank' rel='noopener noreferrer' className={`fa fa-${link.name.toLowerCase()} me-4`} />
                 ))}
             </div>
         </MediaQuery>

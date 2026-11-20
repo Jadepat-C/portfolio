@@ -1,5 +1,3 @@
-import { useState, useEffect } from 'react';
-import { React } from 'react';
 import MediaQuery from 'react-responsive';
 import styles from './Projects.module.scss';
 import projectData from '../Data/Projects.json';
@@ -7,23 +5,10 @@ import projectData from '../Data/Projects.json';
 
 const mediaQueryValue = 768;
 
-function useDataFromJSON(url) {
-    const [data, setData] = useState([]);
-
-    useEffect(() => {
-        fetch(url)
-        .then((response) => response.json())
-        .then((retrievedData) => setData(retrievedData));
-    }, [url]); 
-    return data;
-}
-
 function Projects(){
-    const [projectData, setProjectData] = useState([]);
-    useDataFromJSON(projectData, setProjectData);
     return (
         <>
-        <div className={styles}>
+        <div>
             <div className='container'>
                 <div className='d-inline-block'>
                     <h1 className={`${styles.monospace} ${styles.typewriter}`}>Projects</h1>
@@ -47,7 +32,7 @@ function extractDomain(url) {
     var hostname;
     try {
         hostname = new URL(url).hostname;
-    } catch (error) {
+    } catch {
         hostname = null;
     }
     
@@ -97,9 +82,9 @@ const projectTable = (
 const projectMobile = (
     <div>
         {projectData.map((item,index) => (
-            <div className='card m-2'>
+            <div className='card m-2' key={index}>
                 <a href={item.link} target='_blank' rel='noopener noreferrer'>
-                    <div className='card-body' key={index}>
+                    <div className='card-body'>
                     <div className='d-flex justify-content-between'><h5 className='card-title'>{item.title}</h5> <i className={`${styles.fa} fa fa-external-link ms-2`}></i></div> 
                     <p className='card-text'>{item.type}, {item.year}</p>
                     {item.tag.map((tagItem,tagIndex) => (
