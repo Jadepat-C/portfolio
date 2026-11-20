@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import App from './App';
 
 test('renders the home page greeting and navigation', () => {
@@ -15,4 +15,17 @@ test.each([
   window.history.pushState({}, '', path);
   render(<App />);
   expect(screen.getAllByText(text).length).toBeGreaterThan(0);
+});
+
+test('the mobile menu button opens the menu and picking a page closes it', () => {
+  window.history.pushState({}, '', '/');
+  render(<App />);
+  const toggle = screen.getByRole('button', { name: /toggle navigation/i });
+  expect(toggle).toHaveAttribute('aria-expanded', 'false');
+
+  fireEvent.click(toggle);
+  expect(toggle).toHaveAttribute('aria-expanded', 'true');
+
+  fireEvent.click(screen.getByRole('link', { name: /Projects/ }));
+  expect(toggle).toHaveAttribute('aria-expanded', 'false');
 });

@@ -1,18 +1,16 @@
-/*
- * Tailwind CSS entry point.
- *
- * Bootstrap is still loaded while the components are moved over one by one,
- * so Tailwind's base reset ("Preflight") is left out for now and only the
- * theme and utility classes are loaded.
- */
-@import 'tailwindcss/theme.css' layer(theme);
-@import 'tailwindcss/utilities.css' layer(utilities);
+/* Tailwind CSS entry point: theme, base reset ("Preflight") and utilities. */
+@import 'tailwindcss';
 
 /*
  * Use Bootstrap's breakpoints so the layout switches at the same widths as
  * before. Only md (768px) is the same in both.
  */
 @theme {
+  /* Same font stack Bootstrap used */
+  --font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans',
+    'Liberation Sans', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    'Segoe UI Symbol', 'Noto Color Emoji';
+
   --breakpoint-sm: 36rem; /* 576px */
   --breakpoint-md: 48rem; /* 768px */
   --breakpoint-lg: 62rem; /* 992px */
@@ -56,4 +54,52 @@
   font-weight: 300;
   line-height: 1.2;
   @media (width >= 75rem) { font-size: 2.5rem; }
+}
+
+/*
+ * Site-wide defaults. Tailwind's Preflight resets headings, paragraphs and
+ * small text to plain body text, so put back the sizes and spacing the site
+ * had with Bootstrap. Anything in @layer base is overridden by utility classes.
+ */
+@layer base {
+  html,
+  body,
+  div {
+    background-color: #333333;
+    color: white;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+  h1 { font-size: calc(1.375rem + 1.5vw); }
+  h2 { font-size: calc(1.325rem + 0.9vw); }
+  h3 { font-size: calc(1.3rem + 0.6vw); }
+  h4 { font-size: calc(1.275rem + 0.3vw); }
+  h5 { font-size: 1.25rem; }
+  h6 { font-size: 1rem; }
+  @media (width >= 75rem) {
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    h3 { font-size: 1.75rem; }
+    h4 { font-size: 1.5rem; }
+  }
+
+  p {
+    margin-bottom: 1rem;
+  }
+
+  small {
+    font-size: 0.875em;
+  }
+}
+
+/* Font Awesome icons (loaded in index.html) */
+.fa {
+  font-size: 2rem !important;
+  text-decoration: none;
+  background-color: #333333;
+  color: white;
 }

@@ -17,13 +17,13 @@ function Navigation() {
   return (
     <div className="sticky top-0 z-[1020] h-full">
       <nav className="flex flex-wrap items-center justify-between px-3 py-2 md:flex-nowrap">
-        <NavLink to="/" onClick={closeMenu} className="mr-4 py-[5px]" aria-label="Home">
-          <Logo className={styles.logo} />
+        <NavLink to="/" onClick={closeMenu} className="mr-4 py-[5px] text-xl/[1.5]" aria-label="Home">
+          <Logo className={`${styles.logo} inline`} />
         </NavLink>
 
         <button
           type="button"
-          className={`${styles.toggle} rounded-md px-3 py-1 text-xl md:hidden`}
+          className={`${styles.toggle} rounded-md px-3 py-1 text-xl leading-none md:hidden`}
           aria-controls="responsive-navbar-nav"
           aria-expanded={menuOpen}
           aria-label="Toggle navigation"
@@ -42,7 +42,7 @@ function Navigation() {
                 key={route.path}
                 to={route.path}
                 onClick={closeMenu}
-                className="mx-2 block py-2 md:px-2"
+                className="mx-2 block py-2 text-base md:px-2"
               >
                 <span>{'> '}</span>
                 {route.text}

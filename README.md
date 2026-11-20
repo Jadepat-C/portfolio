@@ -1,6 +1,6 @@
 # Portfolio
 
-Personal portfolio site built with React, React Router, Sass and Bootstrap, bundled with [Vite](https://vite.dev).
+Personal portfolio site built with React, React Router, Tailwind CSS and Sass modules, bundled with [Vite](https://vite.dev).
 
 ## Requirements
 

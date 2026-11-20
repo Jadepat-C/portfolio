@@ -42,16 +42,16 @@ const scrollspy = (
         <ScrollSpy
             items={['education', 'skills', 'experience']}
             currentClassName={styles.active_scrollspy}
-            className={`${styles.scrollspy} mt-2 mb-4 flex flex-col pl-8`}
+            className={`${styles.scrollspy} mt-2 flex flex-col pl-8`}
         >
             <li>
-                <a className={`${styles.scroll_list} block px-4 py-2`} href='#education'><span>{'> '}</span>Education</a>
+                <a className={`${styles.scroll_list} block px-4 py-2 text-[1.2rem]!`} href='#education'><span>{'> '}</span>Education</a>
             </li>
             <li>
-                <a className={`${styles.scroll_list} block px-4 py-2`} href='#skills'><span>{'> '}</span>Skills</a>
+                <a className={`${styles.scroll_list} block px-4 py-2 text-[1.2rem]!`} href='#skills'><span>{'> '}</span>Skills</a>
             </li>
             <li>
-                <a className={`${styles.scroll_list} block px-4 py-2`} href='#experience'><span>{'> '}</span>Experience</a>
+                <a className={`${styles.scroll_list} block px-4 py-2 text-[1.2rem]!`} href='#experience'><span>{'> '}</span>Experience</a>
             </li>
         </ScrollSpy>
     </nav>
@@ -103,7 +103,7 @@ const education = (
         {educationData.map((item, index) => (
             <div className={cardClass} key={index}>
                 <div className='flex flex-col p-4 md:flex-row'>
-                    <small className='mr-4 md:w-1/4 md:flex-none'>{item.duration}</small>
+                    <small className='mr-4 leading-6 md:w-1/4 md:flex-none md:leading-normal'>{item.duration}</small>
                     <div>
                         <h4>{item.program}</h4>
                         <h5>{item.school}</h5>
@@ -121,7 +121,7 @@ const experience = (
         {experienceData.map((item, index) => (
             <div className={cardClass} key={index}>
                 <div className='flex flex-col p-4 md:flex-row'>
-                    <small className='mr-4 md:w-1/4 md:flex-none'>{item.duration}</small>
+                    <small className='mr-4 leading-6 md:w-1/4 md:flex-none md:leading-normal'>{item.duration}</small>
                     <div>
                         <h4>{item.title}</h4>
                         <h5>{item.company}</h5>
