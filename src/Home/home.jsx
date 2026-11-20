@@ -1,76 +1,52 @@
-import React, { useCallback, useEffect } from 'react';
+import { useCallback, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import MediaQuery from 'react-responsive';
 
 import styles from './Home.module.scss';
 
-const mediaQueryValue = 768;
+function Home() {
+  const navigate = useNavigate();
 
-function Home(){
-    let navigate = useNavigate();
-    
-    const handleEnterPress = useCallback((event) => {
-      if (event.key === 'Enter') {
-        event.preventDefault();
-        // Handle the Enter key press here
-        navigate('/profile'); // Replace with your desired action
-      }
-    }, [navigate]);
-  
-    useEffect(() => {
-      const handleKeyDown = (event) => {
-        handleEnterPress(event);
-      };
-  
-      document.addEventListener('keydown', handleKeyDown);
-  
-      return () => {
-        document.removeEventListener('keydown', handleKeyDown);
-      };
-    }, [handleEnterPress]);
-    return (
-        <>
-          <div>
-          <div className={`${styles.typewriter} container w-75 mt-5`}>
-              {welcome}
-              {nextBtn}
-            </div>
-          </div>
-            
-        </>
-    );
+  // Pressing Enter anywhere on the home page goes to the profile page.
+  const handleEnterPress = useCallback((event) => {
+    if (event.key === 'Enter') {
+      event.preventDefault();
+      navigate('/profile');
+    }
+  }, [navigate]);
+
+  useEffect(() => {
+    document.addEventListener('keydown', handleEnterPress);
+    return () => {
+      document.removeEventListener('keydown', handleEnterPress);
+    };
+  }, [handleEnterPress]);
+
+  return (
+    <div className={`${styles.typewriter} page-container mt-12 w-3/4!`}>
+      {welcome}
+      {nextBtn}
+    </div>
+  );
 }
 
 export default Home;
 
+// Phones get smaller headings; md (768px) and up get the big ones.
 const welcome = (
-    <div>
-        <div className='d-inline-block'>
-          <MediaQuery minWidth={mediaQueryValue}>
-            <h1 className={`${styles.typewriter} display-1`}>{'>'}Hello World!</h1>
-            <h2 className={`${styles.typewriter} display-5`}>{'>'}I'm <span className={styles.name}>Jadepat Chernsonthi</span></h2>
-          </MediaQuery>
-          <MediaQuery maxWidth={mediaQueryValue}>
-            <h1 className={`${styles.typewriter} display-4`}>{'>'}Hello World!</h1>
-            <h6 className={`${styles.typewriter}`}>{'>'}I'm <span className={styles.name}>Jadepat Chernsonthi</span></h6>
-          </MediaQuery>
-        </div>
+  <div>
+    <div className="inline-block">
+      <h1 className={`${styles.typewriter} display-4 md:display-1`}>{'>'}Hello World!</h1>
+      <h2 className={`${styles.typewriter} text-base font-medium md:display-5`}>
+        {'>'}I'm <span className={styles.name}>Jadepat Chernsonthi</span>
+      </h2>
     </div>
+  </div>
 );
 
 const nextBtn = (
-  <div className='d-flex justify-content-end'>
-    <MediaQuery minWidth={mediaQueryValue}>
-      <Link to='/profile'>
-        <p className={`${styles.typewriter} display-6`}>Enter &rarr;</p>
-      </Link>
-    </MediaQuery>
-    <MediaQuery maxWidth={mediaQueryValue}>
-      <Link to='/profile' className='mt-5'>
-        <p className={`${styles.typewriter} display-6`}>Enter &rarr;</p>
-      </Link>
-    </MediaQuery>
-          
-      </div>
+  <div className="flex justify-end">
+    <Link to="/profile" className="mt-12 md:mt-0">
+      <p className={`${styles.typewriter} display-6`}>Enter &rarr;</p>
+    </Link>
+  </div>
 );
-
