@@ -1,17 +1,23 @@
 .nav {
-    a{
+    a {
         color: white;
         font-family: monospace;
+        text-decoration: none;
     }
     a:hover {
         color: grey;
         transition: .2s ease-in-out;
     }
-    a.active {
-        color: grey;
-    }
     span {
         display: none;
+    }
+    /* The current page: bold, with the "> " prompt in front */
+    a:global(.active) {
+        color: white;
+        font-weight: bold;
+        span {
+            display: contents;
+        }
     }
 }
 
@@ -29,7 +35,7 @@
 
 
 .toggle{
-    border: transparent !important;
+    border: 1px solid transparent !important;
 }
 
 .hamburger {
