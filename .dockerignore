@@ -1,0 +1,15 @@
+# Keep the Docker build context small and free of local files.
+node_modules
+build
+dist
+coverage
+.git
+.github
+.vscode
+.idea
+.DS_Store
+npm-debug.log*
+.env*
+Dockerfile
+compose.yaml
+README.md
